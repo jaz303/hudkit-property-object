@@ -25,11 +25,26 @@ PropertyObject.prototype.group = function(title) {
 	var group = {
 		title: title,
 		propertyNames: names,
-		add: function(name, initialValue, options) {
+		add: function(name, type, initialValue, options) {
+
+			if (name in po._properties) {
+				throw new Error("duplicate property: " + name);
+			}
+
+			options = options || {};
+			options.type = type;
+
+			if (!('caption' in options)) {
+				// TODO: humanize name
+				options.caption = name;
+			}
+
 			names.push(name);
 			po._values[name] = initialValue;
-			po._properties[name] = options || {};
+			po._properties[name] = options;
+
 			return this;
+
 		},
 		back: function() {
 			return po;
@@ -64,7 +79,7 @@ PropertyObject.prototype.getPropertyValue = function(key) {
 
 PropertyObject.prototype.setPropertyValue = function(key, newValue, oldValue) {
 	
-	this._values[key] = value;
+	this._values[key] = newValue;
 	
 	this.onChange.emit(this, {
 		property 	: key,
