@@ -1,6 +1,6 @@
 {
   "name": "hudkit-property-object",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "2-way binding object for hudkit's PropertyEditor widget",
   "main": "index.js",
   "scripts": {
