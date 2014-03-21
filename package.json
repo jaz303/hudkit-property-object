@@ -1,0 +1,26 @@
+{
+  "name": "hudkit-property-object",
+  "version": "0.0.0",
+  "description": "2-way binding object for hudkit's PropertyEditor widget",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaz303/hudkit-property-object.git"
+  },
+  "keywords": [
+    "hudkit",
+    "ui",
+    "property",
+    "editor",
+    "binding"
+  ],
+  "author": "Jason Frame <jason@onehackoranother.com> (http://jasonframe.co.uk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaz303/hudkit-property-object/issues"
+  },
+  "homepage": "https://github.com/jaz303/hudkit-property-object"
+}
