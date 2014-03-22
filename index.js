@@ -1,5 +1,8 @@
 var signal = require('signalkit');
 
+// TODO: transform functions
+// TODO: accept/reject (validation)
+
 module.exports = function() {
     return new PropertyObject();
 }
