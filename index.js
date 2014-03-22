@@ -74,10 +74,22 @@ PropertyObject.prototype.getPropertyDescriptor = function(name) {
 }
 
 PropertyObject.prototype.getPropertyValue = function(key) {
+
+	if (!(key in this._values)) {
+		throw new Error("no such property: " + key);
+	}
+
 	return this._values[key];
+
 }
 
-PropertyObject.prototype.setPropertyValue = function(key, newValue, oldValue) {
+PropertyObject.prototype.setPropertyValue = function(key, newValue) {
+
+	if (!(key in this._values)) {
+		throw new Error("no such property: " + key);
+	}
+
+	var oldValue = this._values[key];
 	
 	this._values[key] = newValue;
 	
